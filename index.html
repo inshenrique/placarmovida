@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Placar Movida</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-top: 50px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    #placar {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .time-ganhando {
+      color: blue;
+    }
+    
+    .time-perdendo {
+      color: red;
+    }
+    
+    .time-empatado {
+      color: black;
+    }
+  </style>
+</head>
+  
+ <h1>Placar Movida</h1>
+
+  <div class="logo">
+   <img src="imagens/logo.svg" alt="Logo Movida" style="width: 300px;">
+  </div>
+
+  <div id="placar">
+    <h2><span id="nomeTimeA" class="time-empatado">Time A</span>: <span id="timeA" class="time-empatado"></span></h2>
+    <h2><span id="nomeTimeB" class="time-empatado">Time B</span>: <span id="timeB" class="time-empatado"></span></h2>
+  </div>
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1f3CV_JbWQ6GA39SNjeuQ-X2Nrsyk6co0YDE7nk6vQ8o/gviz/tq?range=A:B');
+      query.send(handleQueryResponse);
+    }
+
+    function handleQueryResponse(response) {
+      var dataTable = response.getDataTable();
+      var timeA = parseInt(dataTable.getValue(0, 1));
+      var timeB = parseInt(dataTable.getValue(1, 1));
+
+      document.getElementById('timeA').textContent = timeA;
+      document.getElementById('timeB').textContent = timeB;
+
+      // Adiciona classes CSS aos elementos do placar com base nas pontuações dos times
+      if (timeA > timeB) {
+        document.getElementById('nomeTimeA').className = 'time-ganhando';
+        document.getElementById('timeA').className = 'time-ganhando';
+        document.getElementById('nomeTimeB').className = 'time-perdendo';
+        document.getElementById('timeB').className = 'time-perdendo';
+      } else if (timeA < timeB) {
+        document.getElementById('nomeTimeA').className = 'time-perdendo';
+        document.getElementById('timeA').className = 'time-perdendo';
+        document.getElementById('nomeTimeB').className = 'time-ganhando';
+        document.getElementById('timeB').className = 'time-ganhando';
+      } else {
+        document.getElementById('nomeTimeA').className = 'time-empatado';
+        document.getElementById('timeA').className = 'time-empatado';
+        document.getElementById('nomeTimeB').className = 'time-empatado';
+        document.getElementById('timeB').className = 'time-empatado';
+      }
+    }
+
+    // Função para atualizar o placar a cada 5 segundos
+    setInterval(function() {
+      drawChart();
+    }, 5000);
+  </script>
+</body>
+</html>
