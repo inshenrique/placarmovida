@@ -37,18 +37,43 @@
     .time-empatado {
       color: black;
     }
+    
+    .nome-time {
+      font-size: 30px;
+    }
+    
+    .placar {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    
+    .placar span {
+      margin: 0 5px;
+    }
+    
+    .time-logo {
+      width: 100px;
+      vertical-align: middle;
+    }
   </style>
 </head>
-  
- <h1>Placar Movida</h1>
+<body>
+  <h1>Placar Movida</h1>
 
   <div class="logo">
-   <img src="imagens/logo.svg" alt="Logo Movida" style="width: 300px;">
+    <img src="imagens/logo.svg" alt="Logo Movida" style="width: 300px;">
   </div>
 
   <div id="placar">
-    <h2><span id="nomeTimeA" class="time-empatado">Time A</span>: <span id="timeA" class="time-empatado"></span></h2>
-    <h2><span id="nomeTimeB" class="time-empatado">Time B</span>: <span id="timeB" class="time-empatado"></span></h2>
+    <h2>
+      <img src="imagens/hb20.png" alt="Time HB20" class="time-logo">
+      <span id="nomeTimeA" class="time-empatado nome-time">Time HB20</span>
+      <span class="placar"><span id="timeA" class="time-empatado"></span></span>
+      <span>X</span>
+      <span class="placar"><span id="timeB" class="time-empatado"></span></span>
+      <span id="nomeTimeB" class="time-empatado nome-time">Time Mobi</span>
+      <img src="imagens/mobi.png" alt="Time Mobi" class="time-logo">
+    </h2>
   </div>
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,19 +96,19 @@
 
       // Adiciona classes CSS aos elementos do placar com base nas pontuações dos times
       if (timeA > timeB) {
-        document.getElementById('nomeTimeA').className = 'time-ganhando';
+        document.getElementById('nomeTimeA').className = 'time-ganhando nome-time';
         document.getElementById('timeA').className = 'time-ganhando';
-        document.getElementById('nomeTimeB').className = 'time-perdendo';
+        document.getElementById('nomeTimeB').className = 'time-perdendo nome-time';
         document.getElementById('timeB').className = 'time-perdendo';
       } else if (timeA < timeB) {
-        document.getElementById('nomeTimeA').className = 'time-perdendo';
+        document.getElementById('nomeTimeA').className = 'time-perdendo nome-time';
         document.getElementById('timeA').className = 'time-perdendo';
-        document.getElementById('nomeTimeB').className = 'time-ganhando';
+        document.getElementById('nomeTimeB').className = 'time-ganhando nome-time';
         document.getElementById('timeB').className = 'time-ganhando';
       } else {
-        document.getElementById('nomeTimeA').className = 'time-empatado';
+        document.getElementById('nomeTimeA').className = 'time-empatado nome-time';
         document.getElementById('timeA').className = 'time-empatado';
-        document.getElementById('nomeTimeB').className = 'time-empatado';
+        document.getElementById('nomeTimeB').className = 'time-empatado nome-time';
         document.getElementById('timeB').className = 'time-empatado';
       }
     }
