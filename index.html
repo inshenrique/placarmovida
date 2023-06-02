@@ -53,28 +53,24 @@
     }
     
     .time-logo {
+      width: 100px;
+      vertical-align: middle;
       display: block;
       margin: 0 auto;
-      width: 150px;
-      margin-bottom: 10px;
     }
     
     .time-container {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
     }
-  .auto-style1 {
-	font-size: 40pt;
-}
-.auto-style2 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	font-size: 40pt;
-}
+    
+    .times-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -86,17 +82,20 @@
 
   <div id="placar">
     <h2>
-      <div class="time-container">
-        <img src="imagens/hb20.png" alt="Time HB20" class="time-logo" style="width: 200px">
-        <span id="nomeTimeA" class="auto-style1">Time Paixão</span>
-      </div>
-      <div class="auto-style2">
-        <span class="placar"><span id="timeA" class="time-empatado"></span>X</span>
-        <span class="placar"><span id="timeB" class="time-empatado"></span></span>
-      </div>
-      <div class="time-container">
-        <span id="nomeTimeB" class="auto-style1">Time Inovação</span>
-        <img src="imagens/mobi.png" alt="Time Mobi" class="time-logo" style="width: 200px">
+      <div class="times-wrapper">
+        <div class="time-container">
+          <img src="imagens/hb20.png" alt="Time HB20" class="time-logo">
+          <span id="nomeTimeA" class="nome-time">Time Paixão</span>
+        </div>
+        <div class="time-container">
+          <span class="placar"><span id="timeA" class="time-empatado"></span></span>
+          <span class="placar">X</span>
+          <span class="placar"><span id="timeB" class="time-empatado"></span></span>
+        </div>
+        <div class="time-container">
+          <img src="imagens/mobi.png" alt="Time Mobi" class="time-logo">
+          <span id="nomeTimeB" class="nome-time">Time Inovação</span>
+        </div>
       </div>
     </h2>
   </div>
