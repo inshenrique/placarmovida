@@ -55,23 +55,19 @@
     .time-logo {
       width: 100px;
       vertical-align: middle;
-      display: block;
-      margin: 0 auto;
     }
     
-    .time-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 20px;
     }
     
-    .times-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .footer a {
+      color: #000;
+      text-decoration: none;
     }
-  .auto-style2 {
+  .auto-style1 {
 	font-size: xx-large;
 }
   </style>
@@ -85,23 +81,13 @@
 
   <div id="placar">
     <h2>
-      <div class="times-wrapper">
-        <div class="time-container">
-          <img src="imagens/hb20.png" alt="Time HB20" class="time-logo" style="width: 200px"><span class="auto-style2">
-			</span>
-          <span id="nomeTimeA" class="auto-style2">Time Paixão&nbsp; </span>
-        &nbsp;</div>
-        <div class="time-container">
-          <span class="placar"><span id="timeA" class="time-empatado"></span></span>
-          <span class="placar">X</span>
-          <span class="placar"><span id="timeB" class="time-empatado"></span></span>
-        </div>
-        <div class="time-container">
-          <img src="imagens/mobi.png" alt="Time Mobi" class="time-logo" style="width: 200px"><span class="auto-style2">
-			</span>
-          <span id="nomeTimeB" class="auto-style2">&nbsp; Time Inovação</span>
-        </div>
-      </div>
+      <img src="imagens/hb20.png" alt="Time HB20" class="time-logo" style="width: 150px">
+      <span id="nomeTimeA" class="auto-style1">Time Paixão</span>
+      <span class="placar"><span id="timeA" class="time-empatado"></span></span>
+      <span class="auto-style1">X</span>
+      <span class="placar"><span id="timeB" class="time-empatado"></span></span>
+      <span id="nomeTimeB" class="auto-style1">Time Inovação</span>
+      <img src="imagens/mobi.png" alt="Time Mobi" class="time-logo" style="width: 150px">
     </h2>
   </div>
 
@@ -147,5 +133,9 @@
       drawChart();
     }, 5000);
   </script>
+  
+  <div class="footer">
+      <br><br><br><br><br><br><br><br><br>Criado por <a href="https://srhenrique.webnode.page/">Henrique</a>
+  </div>
 </body>
 </html>
