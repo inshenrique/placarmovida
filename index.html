@@ -53,11 +53,27 @@
     }
     
     .time-logo {
-      width: 100px;
-      vertical-align: middle;
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      margin-bottom: 10px;
+    }
+    
+    .time-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   .auto-style1 {
-	font-size: xx-large;
+	font-size: 40pt;
+}
+.auto-style2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-size: 40pt;
 }
   </style>
 </head>
@@ -70,13 +86,18 @@
 
   <div id="placar">
     <h2>
-      <img src="imagens/hb20.png" alt="Time HB20" class="time-logo" style="width: 150px">
-      <span id="nomeTimeA" class="auto-style1">Time Paixão</span>
-      <span class="placar"><span id="timeA" class="time-empatado"></span></span>
-      <span class="auto-style1">X</span>
-      <span class="placar"><span id="timeB" class="time-empatado"></span></span>
-      <span id="nomeTimeB" class="auto-style1">Time Inovação</span>
-      <img src="imagens/mobi.png" alt="Time Mobi" class="time-logo" style="width: 150px">
+      <div class="time-container">
+        <img src="imagens/hb20.png" alt="Time HB20" class="time-logo" style="width: 200px">
+        <span id="nomeTimeA" class="auto-style1">Time Paixão</span>
+      </div>
+      <div class="auto-style2">
+        <span class="placar"><span id="timeA" class="time-empatado"></span>X</span>
+        <span class="placar"><span id="timeB" class="time-empatado"></span></span>
+      </div>
+      <div class="time-container">
+        <span id="nomeTimeB" class="auto-style1">Time Inovação</span>
+        <img src="imagens/mobi.png" alt="Time Mobi" class="time-logo" style="width: 200px">
+      </div>
     </h2>
   </div>
 
